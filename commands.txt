@@ -1,0 +1,19 @@
+Open Jupyterlab
+
+brew services start jupyterlab
+
+python3 -m venv venv
+source venv/bin/activate
+python -m ipykernel install --user --name=venv --display-name "Python (venv)"
+
+pip install pandas
+pip install openpyxl
+pip install dotenv
+pip install neo4j
+pip install ipykernel
+pip install python-dotenv
+pip install langchain
+pip install langchain-community
+pip install langchain-openai
+pip install openai
+pip install tiktoken
