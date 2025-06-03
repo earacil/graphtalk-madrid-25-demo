@@ -1,0 +1,563 @@
+{
+  "version": "2.3.1-beta.0",
+  "visualisation": {
+    "nodes": [
+      {
+        "id": "n:1",
+        "position": {
+          "x": -28.333333333333332,
+          "y": -58.666666666666664
+        }
+      },
+      {
+        "id": "n:2",
+        "position": {
+          "x": -59.606770833333336,
+          "y": 59.33333333333333
+        }
+      },
+      {
+        "id": "n:3",
+        "position": {
+          "x": 44.39322916666667,
+          "y": 54
+        }
+      },
+      {
+        "id": "n:4",
+        "position": {
+          "x": -5.75169836956519,
+          "y": -185.10789049919484
+        }
+      }
+    ]
+  },
+  "dataModel": {
+    "version": "2.3.1-beta.0",
+    "graphSchemaRepresentation": {
+      "version": "1.0.0",
+      "graphSchema": {
+        "nodeLabels": [
+          {
+            "$id": "nl:1",
+            "token": "Product",
+            "properties": [
+              {
+                "$id": "p:1",
+                "token": "productid",
+                "type": {
+                  "type": "string"
+                },
+                "nullable": true
+              },
+              {
+                "$id": "p:2",
+                "token": "name",
+                "type": {
+                  "type": "string"
+                },
+                "nullable": true
+              },
+              {
+                "$id": "p:5",
+                "token": "description",
+                "type": {
+                  "type": "string"
+                },
+                "nullable": true
+              }
+            ]
+          },
+          {
+            "$id": "nl:2",
+            "token": "Brand",
+            "properties": [
+              {
+                "$id": "p:3",
+                "token": "name",
+                "type": {
+                  "type": "string"
+                },
+                "nullable": true
+              }
+            ]
+          },
+          {
+            "$id": "nl:3",
+            "token": "Category",
+            "properties": [
+              {
+                "$id": "p:4",
+                "token": "name",
+                "type": {
+                  "type": "string"
+                },
+                "nullable": true
+              }
+            ]
+          },
+          {
+            "$id": "nl:4",
+            "token": "Customer",
+            "properties": [
+              {
+                "$id": "p:6",
+                "token": "name",
+                "type": {
+                  "type": "string"
+                },
+                "nullable": true
+              }
+            ]
+          }
+        ],
+        "relationshipTypes": [
+          {
+            "$id": "rt:1",
+            "token": "BRANDED_BY",
+            "properties": []
+          },
+          {
+            "$id": "rt:2",
+            "token": "BELONGS_TO",
+            "properties": []
+          },
+          {
+            "$id": "rt:3",
+            "token": "RATING",
+            "properties": [
+              {
+                "$id": "p:7",
+                "token": "value",
+                "type": {
+                  "type": "integer"
+                },
+                "nullable": true
+              }
+            ]
+          }
+        ],
+        "nodeObjectTypes": [
+          {
+            "$id": "n:1",
+            "labels": [
+              {
+                "$ref": "#nl:1"
+              }
+            ]
+          },
+          {
+            "$id": "n:2",
+            "labels": [
+              {
+                "$ref": "#nl:2"
+              }
+            ]
+          },
+          {
+            "$id": "n:3",
+            "labels": [
+              {
+                "$ref": "#nl:3"
+              }
+            ]
+          },
+          {
+            "$id": "n:4",
+            "labels": [
+              {
+                "$ref": "#nl:4"
+              }
+            ]
+          }
+        ],
+        "relationshipObjectTypes": [
+          {
+            "$id": "r:1",
+            "type": {
+              "$ref": "#rt:1"
+            },
+            "from": {
+              "$ref": "#n:1"
+            },
+            "to": {
+              "$ref": "#n:2"
+            }
+          },
+          {
+            "$id": "r:2",
+            "type": {
+              "$ref": "#rt:2"
+            },
+            "from": {
+              "$ref": "#n:1"
+            },
+            "to": {
+              "$ref": "#n:3"
+            }
+          },
+          {
+            "$id": "r:3",
+            "type": {
+              "$ref": "#rt:3"
+            },
+            "from": {
+              "$ref": "#n:4"
+            },
+            "to": {
+              "$ref": "#n:1"
+            }
+          }
+        ],
+        "constraints": [
+          {
+            "$id": "c:1",
+            "name": "productid_Product_uniq",
+            "constraintType": "uniqueness",
+            "entityType": "node",
+            "nodeLabel": {
+              "$ref": "#nl:1"
+            },
+            "properties": [
+              {
+                "$ref": "#p:1"
+              }
+            ]
+          },
+          {
+            "$id": "c:2",
+            "name": "name_Brand_uniq",
+            "constraintType": "uniqueness",
+            "entityType": "node",
+            "nodeLabel": {
+              "$ref": "#nl:2"
+            },
+            "properties": [
+              {
+                "$ref": "#p:3"
+              }
+            ]
+          },
+          {
+            "$id": "c:3",
+            "name": "name_Category_uniq",
+            "constraintType": "uniqueness",
+            "entityType": "node",
+            "nodeLabel": {
+              "$ref": "#nl:3"
+            },
+            "properties": [
+              {
+                "$ref": "#p:4"
+              }
+            ]
+          },
+          {
+            "$id": "c:4",
+            "name": "name_Customer_uniq",
+            "constraintType": "uniqueness",
+            "entityType": "node",
+            "nodeLabel": {
+              "$ref": "#nl:4"
+            },
+            "properties": [
+              {
+                "$ref": "#p:6"
+              }
+            ]
+          }
+        ],
+        "indexes": [
+          {
+            "$id": "i:1",
+            "name": "productid_Product_uniq",
+            "indexType": "default",
+            "entityType": "node",
+            "nodeLabel": {
+              "$ref": "#nl:1"
+            },
+            "properties": [
+              {
+                "$ref": "#p:1"
+              }
+            ]
+          },
+          {
+            "$id": "i:2",
+            "name": "name_Brand_uniq",
+            "indexType": "default",
+            "entityType": "node",
+            "nodeLabel": {
+              "$ref": "#nl:2"
+            },
+            "properties": [
+              {
+                "$ref": "#p:3"
+              }
+            ]
+          },
+          {
+            "$id": "i:3",
+            "name": "name_Category_uniq",
+            "indexType": "default",
+            "entityType": "node",
+            "nodeLabel": {
+              "$ref": "#nl:3"
+            },
+            "properties": [
+              {
+                "$ref": "#p:4"
+              }
+            ]
+          },
+          {
+            "$id": "i:4",
+            "name": "name_Customer_uniq",
+            "indexType": "default",
+            "entityType": "node",
+            "nodeLabel": {
+              "$ref": "#nl:4"
+            },
+            "properties": [
+              {
+                "$ref": "#p:6"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "graphSchemaExtensionsRepresentation": {
+      "nodeKeyProperties": [
+        {
+          "node": {
+            "$ref": "#n:1"
+          },
+          "keyProperty": {
+            "$ref": "#p:1"
+          }
+        },
+        {
+          "node": {
+            "$ref": "#n:2"
+          },
+          "keyProperty": {
+            "$ref": "#p:3"
+          }
+        },
+        {
+          "node": {
+            "$ref": "#n:3"
+          },
+          "keyProperty": {
+            "$ref": "#p:4"
+          }
+        },
+        {
+          "node": {
+            "$ref": "#n:4"
+          },
+          "keyProperty": {
+            "$ref": "#p:6"
+          }
+        }
+      ]
+    },
+    "graphMappingRepresentation": {
+      "dataSourceSchema": {
+        "type": "local",
+        "tableSchemas": [
+          {
+            "name": "productos_100.csv",
+            "expanded": true,
+            "fields": [
+              {
+                "name": "productId",
+                "sample": "P001",
+                "recommendedType": {
+                  "type": "string"
+                }
+              },
+              {
+                "name": "name",
+                "sample": "ThermoLux SteamBake X606",
+                "recommendedType": {
+                  "type": "string"
+                }
+              },
+              {
+                "name": "category",
+                "sample": "Horno",
+                "recommendedType": {
+                  "type": "string"
+                }
+              },
+              {
+                "name": "brand",
+                "sample": "ThermoLux",
+                "recommendedType": {
+                  "type": "string"
+                }
+              },
+              {
+                "name": "description",
+                "sample": "SteamBake X606 es un horno compacto y pensado para quienes cocinan a diario. Incorpora estructura in...",
+                "recommendedType": {
+                  "type": "string"
+                }
+              }
+            ]
+          },
+          {
+            "name": "ratings_productos_100.csv",
+            "expanded": true,
+            "fields": [
+              {
+                "name": "productId",
+                "sample": "P001",
+                "recommendedType": {
+                  "type": "string"
+                }
+              },
+              {
+                "name": "customerName",
+                "sample": "Alejandro Fernández",
+                "recommendedType": {
+                  "type": "string"
+                }
+              },
+              {
+                "name": "rating",
+                "sample": "1",
+                "recommendedType": {
+                  "type": "integer"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "nodeMappings": [
+        {
+          "node": {
+            "$ref": "#n:1"
+          },
+          "tableName": "productos_100.csv",
+          "propertyMappings": [
+            {
+              "property": {
+                "$ref": "#p:1"
+              },
+              "fieldName": "productId"
+            },
+            {
+              "property": {
+                "$ref": "#p:2"
+              },
+              "fieldName": "name"
+            },
+            {
+              "property": {
+                "$ref": "#p:5"
+              },
+              "fieldName": "description"
+            }
+          ]
+        },
+        {
+          "node": {
+            "$ref": "#n:2"
+          },
+          "tableName": "productos_100.csv",
+          "propertyMappings": [
+            {
+              "property": {
+                "$ref": "#p:3"
+              },
+              "fieldName": "brand"
+            }
+          ]
+        },
+        {
+          "node": {
+            "$ref": "#n:3"
+          },
+          "tableName": "productos_100.csv",
+          "propertyMappings": [
+            {
+              "property": {
+                "$ref": "#p:4"
+              },
+              "fieldName": "category"
+            }
+          ]
+        },
+        {
+          "node": {
+            "$ref": "#n:4"
+          },
+          "tableName": "ratings_productos_100.csv",
+          "propertyMappings": [
+            {
+              "property": {
+                "$ref": "#p:6"
+              },
+              "fieldName": "customerName"
+            }
+          ]
+        }
+      ],
+      "relationshipMappings": [
+        {
+          "relationship": {
+            "$ref": "#r:1"
+          },
+          "tableName": "productos_100.csv",
+          "propertyMappings": [],
+          "fromMapping": {
+            "fieldName": "productId"
+          },
+          "toMapping": {
+            "fieldName": "brand"
+          }
+        },
+        {
+          "relationship": {
+            "$ref": "#r:2"
+          },
+          "tableName": "productos_100.csv",
+          "propertyMappings": [],
+          "fromMapping": {
+            "fieldName": "productId"
+          },
+          "toMapping": {
+            "fieldName": "category"
+          }
+        },
+        {
+          "relationship": {
+            "$ref": "#r:3"
+          },
+          "tableName": "ratings_productos_100.csv",
+          "propertyMappings": [
+            {
+              "property": {
+                "$ref": "#p:7"
+              },
+              "fieldName": "rating"
+            }
+          ],
+          "fromMapping": {
+            "fieldName": "customerName"
+          },
+          "toMapping": {
+            "fieldName": "productId"
+          }
+        }
+      ]
+    },
+    "configurations": {
+      "idsToIgnore": []
+    }
+  }
+}
