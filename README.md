@@ -24,4 +24,11 @@ Este notebook implementa una demo de **GraphRAG (Retrieval-Augmented Generation 
 - **OpenAIEmbeddings**: Modelo de embeddings semánticos.
 - **Neo4j**: Base de datos de grafos que almacena productos con embeddings.
 
+## Requisitos
+
+- Fichero `.env` en la raíz con las siguientes variables
+    - NEO4J_URI
+    - NEO4J_USER
+    - NEO4J_PASSWORD
+    - OPENAI_API_KEY
 ---
